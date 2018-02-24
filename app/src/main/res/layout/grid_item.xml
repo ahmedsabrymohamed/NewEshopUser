@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="190dp"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/movieDraweeView"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        fresco:roundWithOverlayColor="#302a2a"
+        fresco:roundedCornerRadius="5dp"
+        fresco:roundingBorderColor="#000000"
+        fresco:roundingBorderWidth="0.80dp"
+        fresco:placeholderImage="@drawable/movie_poster"
+        fresco:placeholderImageScaleType="fitCenter"
+        />
+
+    <TextView
+        android:id="@+id/gridTitleTextView"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="#ffffff"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/gridDateTextView"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:textColor="#978f8f"
+        android:textSize="12sp" />
+</LinearLayout>

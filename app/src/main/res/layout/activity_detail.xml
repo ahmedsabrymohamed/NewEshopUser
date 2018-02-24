@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:context=".DetailActivity">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/movieDraweeView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:fadingEdge="vertical"
+            fresco:actualImageScaleType="fitXY"
+            fresco:backgroundImage="@drawable/shadow" />
+
+
+        <TextView
+            android:id="@+id/movieOriginalTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:text="movieOriginalTitle"
+            android:textColor="#fff"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/movieOverviewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@android:drawable/btn_star_big_on"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:textColor="#fff"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rate It"
+                        android:background="#d21919"
+                        android:textColor="#fff"
+                        android:onClick="rateProduct"
+                        android:visibility="gone"
+                        android:layout_toEndOf="@id/ratingBar"
+                        android:layout_margin="3dp"
+                        android:id="@+id/rateIt"
+                        />
+
+                    <com.like.LikeButton
+                        android:id="@+id/favorite_button"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentEnd="true"
+                        app:anim_scale_factor="2"
+                        app:icon_size="30dp"
+                        app:icon_type="heart"
+                        app:like_drawable="@drawable/heart_on"
+                        app:unlike_drawable="@drawable/heart_off" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/movieOverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="4"
+                    android:text="movieOverview"
+                    android:textColor="#fff" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@id/movieOverviewLayout"
+
+                android:id="@+id/comment_layout">
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="@android:dimen/notification_large_icon_height"
+                    android:hint="Add Comment"
+                    android:textColorHint="#fff"
+                    android:textColor="#fff"
+                    android:id="@+id/commentText"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content"
+                    android:text="Send"
+                    android:id="@+id/add_comment"
+                    android:onClick="AddComment"
+                    android:background="#14830c"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/border"
+                android:layout_width="200dp"
+                android:layout_height="2dp"
+                android:layout_below="@id/comment_layout"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="#fff"
+
+                />
+
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/reviews_list"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+
